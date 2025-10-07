@@ -6,8 +6,8 @@ class MovieRepo {
 
   MovieRepo({required this.movieApi});
 
-  Future<List<MovieModel>> getMovies() async {
-    final movies = await movieApi.getMovies(type: 'popular');
+  Future<List<MovieModel>> getMovies({required String type}) async {
+    final movies = await movieApi.getMovies(type: type);
     print(movies);
     return movies.map((movie) => MovieModel.fromJson(movie)).toList();
   }
