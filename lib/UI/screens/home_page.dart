@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:movie_app/UI/widgets/buttom_navigator_bar.dart';
 import 'package:movie_app/UI/widgets/movies_categery.dart';
 import 'package:movie_app/constants/colors.dart';
 import 'package:movie_app/data/repos/movie_repo.dart';
@@ -86,72 +87,6 @@ class _HomePageContent extends StatelessWidget {
             return const SizedBox();
           }
         },
-      ),
-      bottomNavigationBar: Container(
-        decoration: BoxDecoration(
-          borderRadius: BorderRadius.only(
-            topRight: Radius.circular(20),
-            topLeft: Radius.circular(20),
-            bottomLeft: Radius.zero,
-            bottomRight: Radius.zero,
-          ),
-          color: Colors.black,
-        ),
-        child: Padding(
-          padding: const EdgeInsets.symmetric(vertical: 20, horizontal: 10),
-          child: Row(
-            children: [
-              IconButton(
-                onPressed: () {},
-                icon: Container(
-                  height: 50,
-                  decoration: BoxDecoration(
-                    color: kPcolor,
-                    borderRadius: BorderRadius.circular(20),
-                  ),
-                  child: Row(
-                    children: [
-                      Padding(
-                        padding: const EdgeInsets.only(left: 15),
-                        child: Icon(Icons.house, color: Colors.white, size: 25),
-                      ),
-                      SizedBox(width: 5),
-                      Padding(
-                        padding: const EdgeInsets.only(right: 15),
-                        child: Text(
-                          "Home",
-                          style: TextStyle(
-                            fontSize: 15,
-                            fontWeight: FontWeight.bold,
-                          ),
-                        ),
-                      ),
-                    ],
-                  ),
-                ),
-              ),
-              SizedBox(width: 30),
-              IconButton(
-                onPressed: () {},
-                icon: Icon(Icons.search, color: Colors.white, size: 40),
-              ),
-              SizedBox(width: 25),
-              IconButton(
-                onPressed: () {},
-                icon: Icon(Icons.favorite_border_outlined, size: 40),
-              ),
-              SizedBox(width: 25),
-              IconButton(
-                onPressed: () {},
-                icon: Icon(
-                  Icons.person_2_outlined,
-                  color: Colors.white,
-                  size: 40,
-                ),
-              ),
-            ],
-          ),
-        ),
       ),
     );
   }

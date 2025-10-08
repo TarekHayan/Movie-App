@@ -1,9 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart' show BlocProvider;
-import 'package:movie_app/UI/screens/home_page.dart';
-import 'package:movie_app/data/repos/movie_repo.dart';
-import 'package:movie_app/data/web/movie_api.dart';
-import 'package:movie_app/logic/cubit/cubit/get_movies_cubit.dart';
+import 'package:movie_app/UI/widgets/buttom_navigator_bar.dart';
 
 void main() {
   runApp(MovieApp());
@@ -17,8 +13,8 @@ class MovieApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       theme: ThemeData(brightness: Brightness.dark),
-      initialRoute: "HomePage",
-      routes: {"HomePage": (context) => HomePage()},
+      initialRoute: "CustomBottomNav",
+      routes: {"CustomBottomNav": (context) => CustomBottomNav()},
     );
   }
 }
