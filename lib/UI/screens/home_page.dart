@@ -1,8 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-import 'package:movie_app/UI/widgets/buttom_navigator_bar.dart';
 import 'package:movie_app/UI/widgets/movies_categery.dart';
+import 'package:movie_app/UI/widgets/slide_show_movies.dart';
 import 'package:movie_app/constants/colors.dart';
 import 'package:movie_app/data/repos/movie_repo.dart';
 import 'package:movie_app/data/web/movie_api.dart';
@@ -18,6 +17,7 @@ class HomePage extends StatelessWidget {
         final cubit = GetMoviesCubit(MovieRepo(movieApi: MovieApi()));
         cubit.getPopularMovies();
         cubit.getTopRatedMovies();
+        cubit.getNowPlayingMovies();
         return cubit;
       },
       child: const _HomePageContent(),
@@ -62,6 +62,14 @@ class _HomePageContent extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   SizedBox(height: 30),
+
+                  SizedBox(
+                    height: 200,
+                    child: SlideShowMovies(movies: state.nowPlayingMovies),
+                  ),
+
+                  SizedBox(height: 50),
+
                   MoviesCategery(
                     title: "Popular",
                     movies: state.popularMovies,

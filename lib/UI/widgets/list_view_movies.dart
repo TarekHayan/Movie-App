@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:movie_app/constants/texts.dart';
 import 'package:movie_app/data/models/movie_model.dart';
 
 class ListViewMovies extends StatelessWidget {
@@ -9,10 +8,11 @@ class ListViewMovies extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       width: 160,
+      height: 240,
       margin: EdgeInsets.symmetric(horizontal: 8),
       decoration: BoxDecoration(
         image: DecorationImage(
-          image: NetworkImage(kImage + movie.image),
+          image: NetworkImage(movie.image),
           fit: BoxFit.cover,
         ),
         borderRadius: BorderRadius.circular(12),

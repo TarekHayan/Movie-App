@@ -51,7 +51,7 @@ class _MoviesCategeryState extends State<MoviesCategery> {
         widget.movies.isEmpty
             ? Center(child: CircularProgressIndicator(color: kPcolor))
             : SizedBox(
-                height: 200,
+                height: 240,
                 child: ListView.builder(
                   scrollDirection: Axis.horizontal,
                   itemCount: widget.movies.length,

@@ -9,8 +9,13 @@ class MoviesLoading extends GetMoviesState {}
 class MoviesLoaded extends GetMoviesState {
   final List<MovieModel> popularMovies;
   final List<MovieModel> topRatedMovies;
+  final List<MovieModel> nowPlayingMovies;
 
-  MoviesLoaded({required this.popularMovies, required this.topRatedMovies});
+  MoviesLoaded({
+    required this.popularMovies,
+    required this.topRatedMovies,
+    required this.nowPlayingMovies,
+  });
 }
 
 class MoviesError extends GetMoviesState {

@@ -11,6 +11,7 @@ class GetMoviesCubit extends Cubit<GetMoviesState> {
 
   List<MovieModel> popularMovies = [];
   List<MovieModel> topRatedMovies = [];
+  List<MovieModel> nowPlayingMovies = [];
 
   Future<void> getPopularMovies() async {
     try {
@@ -20,6 +21,7 @@ class GetMoviesCubit extends Cubit<GetMoviesState> {
         MoviesLoaded(
           popularMovies: popularMovies,
           topRatedMovies: topRatedMovies,
+          nowPlayingMovies: nowPlayingMovies,
         ),
       );
     } catch (e) {
@@ -35,6 +37,25 @@ class GetMoviesCubit extends Cubit<GetMoviesState> {
         MoviesLoaded(
           popularMovies: popularMovies,
           topRatedMovies: topRatedMovies,
+          nowPlayingMovies: nowPlayingMovies,
+        ),
+      );
+    } catch (e) {
+      emit(MoviesError(e.toString()));
+    }
+  }
+
+  Future<void> getNowPlayingMovies() async {
+    try {
+      emit(MoviesLoading());
+      nowPlayingMovies = await movieRepo.getMovies(type: 'now_playing');
+      print('Now playing movies loaded: ${nowPlayingMovies.length}');
+
+      emit(
+        MoviesLoaded(
+          popularMovies: popularMovies,
+          topRatedMovies: topRatedMovies,
+          nowPlayingMovies: nowPlayingMovies,
         ),
       );
     } catch (e) {

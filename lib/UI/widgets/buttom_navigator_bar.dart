@@ -37,7 +37,6 @@ class _CustomBottomNavState extends State<CustomBottomNav> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.black,
       body: IndexedStack(index: currentIndex, children: pages),
 
       bottomNavigationBar: Container(
