@@ -1,14 +1,19 @@
 part of 'get_movies_cubit.dart';
 
-@immutable
-sealed class GetMoviesState {}
+abstract class GetMoviesState {}
 
-final class GetMoviesInitial extends GetMoviesState {}
+class MoviesInitial extends GetMoviesState {}
 
-final class MoviesLoaded extends GetMoviesState {
-  final List<MovieModel> movies;
+class MoviesLoading extends GetMoviesState {}
 
-  MoviesLoaded({required this.movies});
+class MoviesLoaded extends GetMoviesState {
+  final List<MovieModel> popularMovies;
+  final List<MovieModel> topRatedMovies;
+
+  MoviesLoaded({required this.popularMovies, required this.topRatedMovies});
 }
 
-final class MoviesLoading extends GetMoviesState {}
+class MoviesError extends GetMoviesState {
+  final String message;
+  MoviesError(this.message);
+}
