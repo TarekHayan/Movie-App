@@ -23,7 +23,6 @@ class MovieModel {
       langauge: json['original_language'],
       decribtion: json['overview'],
       image: 'https://image.tmdb.org/t/p/w500${json['poster_path']}',
-
       date: json['release_date'],
       title: json['title'],
       rating: json['vote_average'],
