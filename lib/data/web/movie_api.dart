@@ -1,4 +1,5 @@
 import 'package:dio/dio.dart';
+import 'package:movie_app/constants/texts.dart';
 
 class MovieApi {
   final dio = Dio();
@@ -6,7 +7,7 @@ class MovieApi {
   Future<List<dynamic>> getMovies({required String type}) async {
     try {
       Response response = await dio.get(
-        'https://api.themoviedb.org/3/movie/$type',
+        '$kurlApi/movie/$type',
         queryParameters: {
           'api_key': 'bb9fff2e4799cd1b17f50cea5c229876',
           'language': 'en-US',
