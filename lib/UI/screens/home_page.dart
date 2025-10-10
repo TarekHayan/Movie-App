@@ -42,21 +42,19 @@ class _HomePageContent extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Colors.transparent,
-        title: RichText(
-          text: TextSpan(
-            children: [
-              const TextSpan(text: 'i', style: TextStyle(fontSize: 30)),
-              TextSpan(
-                text: 'F',
-                style: TextStyle(
-                  color: kPcolor,
-                  fontSize: 30,
-                  fontWeight: FontWeight.bold,
-                ),
+        title: Row(
+          children: [
+            Text("i", style: TextStyle(fontSize: 30)),
+            Text(
+              "F",
+              style: TextStyle(
+                color: kPcolor,
+                fontWeight: FontWeight.bold,
+                fontSize: 30,
               ),
-              const TextSpan(text: 'ox', style: TextStyle(fontSize: 30)),
-            ],
-          ),
+            ),
+            Text("ox", style: TextStyle(fontSize: 30)),
+          ],
         ),
       ),
       body: BlocBuilder<GetMoviesCubit, GetMoviesState>(

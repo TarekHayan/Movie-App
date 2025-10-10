@@ -18,7 +18,6 @@ class SlideShowMovies extends StatelessWidget {
             fit: StackFit.expand,
             children: [
               Image.network(movie.image, fit: BoxFit.fill),
-              // ظل خفيف فوق الصورة عشان الشكل يكون أعمق
               Container(
                 decoration: BoxDecoration(
                   gradient: LinearGradient(

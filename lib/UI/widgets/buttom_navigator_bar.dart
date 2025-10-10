@@ -45,7 +45,7 @@ class _CustomBottomNavState extends State<CustomBottomNav> {
             topRight: Radius.circular(20),
             topLeft: Radius.circular(20),
           ),
-          color: Colors.black,
+          // color: Colors.black,
         ),
         child: Padding(
           padding: const EdgeInsets.symmetric(vertical: 20, horizontal: 10),
@@ -81,7 +81,7 @@ class _CustomBottomNavState extends State<CustomBottomNav> {
         ),
         child: Row(
           children: [
-            Icon(icon, color: Colors.white, size: isSelected ? 25 : 35),
+            Icon(icon, size: isSelected ? 25 : 35),
             if (isSelected) ...[
               const SizedBox(width: 8),
               Text(

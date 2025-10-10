@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:movie_app/UI/widgets/grid_view_movies.dart';
 import 'package:movie_app/UI/widgets/list_view_movies.dart';
 import 'package:movie_app/constants/colors.dart';
 import 'package:movie_app/data/models/movie_model.dart';
@@ -38,7 +39,19 @@ class _MoviesCategeryState extends State<MoviesCategery> {
             children: [
               Text(widget.title, style: TextStyle(fontSize: 30)),
               TextButton(
-                onPressed: () {},
+                onPressed: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (contexr) {
+                        return GridViewMovies(
+                          itemCount: widget.movies.length,
+                          movies: widget.movies,
+                        );
+                      },
+                    ),
+                  );
+                },
                 child: Text(
                   'See all',
                   style: TextStyle(color: kPcolor, fontSize: 20),
