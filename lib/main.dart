@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:movie_app/UI/screens/welcom_screen.dart';
 import 'package:movie_app/UI/widgets/buttom_navigator_bar.dart';
 
 void main() {
@@ -13,8 +14,11 @@ class MovieApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       theme: ThemeData(brightness: Brightness.dark),
-      initialRoute: "CustomBottomNav",
-      routes: {"CustomBottomNav": (context) => CustomBottomNav()},
+      initialRoute: "WelcomScreen",
+      routes: {
+        "WelcomScreen": (context) => WelcomScreen(),
+        CustomBottomNav.id: (context) => CustomBottomNav(),
+      },
     );
   }
 }

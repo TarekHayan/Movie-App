@@ -4,7 +4,7 @@ import 'package:movie_app/constants/colors.dart';
 
 class CustomBottomNav extends StatefulWidget {
   const CustomBottomNav({super.key});
-
+  static String id = 'CustomBottomNav';
   @override
   State<CustomBottomNav> createState() => _CustomBottomNavState();
 }
