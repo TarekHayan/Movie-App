@@ -5,7 +5,7 @@ import 'package:movie_app/constants/colors.dart';
 import 'package:movie_app/data/models/genre_movies_model.dart';
 import 'package:movie_app/data/repos/categery_movie_repo.dart';
 import 'package:movie_app/data/web/categery_movie_api.dart';
-import 'package:movie_app/logic/cubit/cubit/cubit/get_categery_cubit.dart';
+import 'package:movie_app/logic/cubit/cubit/get_categery_cubit.dart';
 
 class CustomListGenereMovies extends StatelessWidget {
   const CustomListGenereMovies({super.key, required this.geners});

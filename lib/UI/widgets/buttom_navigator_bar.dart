@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:movie_app/UI/screens/fav_screen.dart';
 import 'package:movie_app/UI/screens/home_page.dart';
 import 'package:movie_app/constants/colors.dart';
+import 'package:movie_app/logic/cubit/cubit/add_fav_cubit.dart';
 
 class CustomBottomNav extends StatefulWidget {
   const CustomBottomNav({super.key});
@@ -20,12 +23,8 @@ class _CustomBottomNavState extends State<CustomBottomNav> {
         style: TextStyle(color: Colors.white, fontSize: 25),
       ),
     ),
-    const Center(
-      child: Text(
-        "Favorites Page",
-        style: TextStyle(color: Colors.white, fontSize: 25),
-      ),
-    ),
+
+    const FavoritesScreen(),
     const Center(
       child: Text(
         "Profile Page",

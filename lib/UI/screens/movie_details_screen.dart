@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:movie_app/UI/widgets/add_to_fav.dart';
 import 'package:movie_app/constants/colors.dart';
 import 'package:movie_app/data/models/movie_model.dart';
+import 'package:movie_app/logic/cubit/cubit/add_fav_cubit.dart';
 
 class MovieDetailsScreen extends StatelessWidget {
   const MovieDetailsScreen({super.key, required this.movie});
@@ -71,7 +73,8 @@ class MovieDetailsScreen extends StatelessWidget {
                             ],
                           ),
                         ),
-                        const AddToFav(),
+
+                        AddToFav(movie: movie),
                       ],
                     ),
                     const SizedBox(height: 20),
@@ -85,7 +88,7 @@ class MovieDetailsScreen extends StatelessWidget {
                     const SizedBox(height: 10),
                     Row(
                       children: [
-                        Text(movie.date, style: TextStyle(fontSize: 20)),
+                        Text(movie.date, style: const TextStyle(fontSize: 20)),
                         const Text(
                           " - Language /  ",
                           style: TextStyle(fontSize: 20),
