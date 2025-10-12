@@ -101,7 +101,7 @@ class WelcomScreen extends StatelessWidget {
                               fontWeight: FontWeight.bold,
                             ),
                           ),
-                          Text(
+                          const Text(
                             ' iFox',
                             style: TextStyle(
                               color: Colors.white,

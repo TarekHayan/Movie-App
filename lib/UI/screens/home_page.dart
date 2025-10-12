@@ -44,7 +44,7 @@ class _HomePageContent extends StatelessWidget {
         backgroundColor: Colors.transparent,
         title: Row(
           children: [
-            Text("i", style: TextStyle(fontSize: 30)),
+            const Text("i", style: TextStyle(fontSize: 30)),
             Text(
               "F",
               style: TextStyle(
@@ -53,7 +53,7 @@ class _HomePageContent extends StatelessWidget {
                 fontSize: 30,
               ),
             ),
-            Text("ox", style: TextStyle(fontSize: 30)),
+            const Text("ox", style: TextStyle(fontSize: 30)),
           ],
         ),
       ),
@@ -66,14 +66,14 @@ class _HomePageContent extends StatelessWidget {
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  SizedBox(height: 20),
+                  const SizedBox(height: 20),
                   SizedBox(
                     height: 200,
                     child: SlideShowMovies(movies: state.nowPlayingMovies),
                   ),
-                  SizedBox(height: 50),
+                  const SizedBox(height: 50),
                   CustomListGenereMovies(geners: state.genres),
-                  SizedBox(height: 30),
+                  const SizedBox(height: 30),
 
                   MoviesCategery(
                     title: "Popular",

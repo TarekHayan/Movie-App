@@ -16,7 +16,7 @@ class GridViewMovies extends StatelessWidget {
     return Scaffold(
       body: GridView.builder(
         itemCount: itemCount,
-        gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+        gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
           crossAxisCount: 2,
           mainAxisSpacing: 20,
           crossAxisSpacing: 5,

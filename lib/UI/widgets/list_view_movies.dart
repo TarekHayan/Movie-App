@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:movie_app/UI/screens/movie_details_screen.dart';
 import 'package:movie_app/data/models/movie_model.dart';
 
 class ListViewMovies extends StatelessWidget {
@@ -6,16 +7,28 @@ class ListViewMovies extends StatelessWidget {
   final MovieModel movie;
   @override
   Widget build(BuildContext context) {
-    return Container(
-      width: 160,
-      height: 240,
-      margin: EdgeInsets.symmetric(horizontal: 8),
-      decoration: BoxDecoration(
-        image: DecorationImage(
-          image: NetworkImage(movie.image),
-          fit: BoxFit.cover,
+    return GestureDetector(
+      onTap: () {
+        Navigator.push(
+          context,
+          MaterialPageRoute(
+            builder: (context) {
+              return MovieDetailsScreen(movie: movie);
+            },
+          ),
+        );
+      },
+      child: Container(
+        width: 160,
+        height: 240,
+        margin: const EdgeInsets.symmetric(horizontal: 8),
+        decoration: BoxDecoration(
+          image: DecorationImage(
+            image: NetworkImage(movie.image),
+            fit: BoxFit.cover,
+          ),
+          borderRadius: BorderRadius.circular(12),
         ),
-        borderRadius: BorderRadius.circular(12),
       ),
     );
   }

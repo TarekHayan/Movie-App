@@ -13,20 +13,20 @@ class _CustomBottomNavState extends State<CustomBottomNav> {
   int currentIndex = 0;
 
   final List<Widget> pages = [
-    HomePage(),
-    Center(
+    const HomePage(),
+    const Center(
       child: Text(
         "Search Page",
         style: TextStyle(color: Colors.white, fontSize: 25),
       ),
     ),
-    Center(
+    const Center(
       child: Text(
         "Favorites Page",
         style: TextStyle(color: Colors.white, fontSize: 25),
       ),
     ),
-    Center(
+    const Center(
       child: Text(
         "Profile Page",
         style: TextStyle(color: Colors.white, fontSize: 25),
@@ -40,8 +40,8 @@ class _CustomBottomNavState extends State<CustomBottomNav> {
       body: IndexedStack(index: currentIndex, children: pages),
 
       bottomNavigationBar: Container(
-        decoration: BoxDecoration(
-          borderRadius: const BorderRadius.only(
+        decoration: const BoxDecoration(
+          borderRadius: BorderRadius.only(
             topRight: Radius.circular(20),
             topLeft: Radius.circular(20),
           ),

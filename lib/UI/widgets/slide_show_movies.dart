@@ -1,5 +1,6 @@
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
+import 'package:movie_app/UI/screens/movie_details_screen.dart';
 import 'package:movie_app/data/models/movie_model.dart';
 
 class SlideShowMovies extends StatelessWidget {
@@ -18,15 +19,27 @@ class SlideShowMovies extends StatelessWidget {
             fit: StackFit.expand,
             children: [
               Image.network(movie.image, fit: BoxFit.fill),
-              Container(
-                decoration: BoxDecoration(
-                  gradient: LinearGradient(
-                    colors: [
-                      Colors.black.withOpacity(0.2),
-                      Colors.black.withOpacity(0.05),
-                    ],
-                    begin: Alignment.bottomCenter,
-                    end: Alignment.topCenter,
+              GestureDetector(
+                onTap: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) {
+                        return MovieDetailsScreen(movie: movie);
+                      },
+                    ),
+                  );
+                },
+                child: Container(
+                  decoration: BoxDecoration(
+                    gradient: LinearGradient(
+                      colors: [
+                        Colors.black.withOpacity(0.2),
+                        Colors.black.withOpacity(0.05),
+                      ],
+                      begin: Alignment.bottomCenter,
+                      end: Alignment.topCenter,
+                    ),
                   ),
                 ),
               ),

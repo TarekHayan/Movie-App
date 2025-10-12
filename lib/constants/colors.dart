@@ -1,3 +1,3 @@
 import 'package:flutter/widgets.dart';
 
-final Color kPcolor = Color(0xffd12f26);
+final Color kPcolor = const Color(0xffd12f26);

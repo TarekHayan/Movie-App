@@ -3,7 +3,7 @@ import 'package:movie_app/UI/screens/welcom_screen.dart';
 import 'package:movie_app/UI/widgets/buttom_navigator_bar.dart';
 
 void main() {
-  runApp(MovieApp());
+  runApp(const MovieApp());
 }
 
 class MovieApp extends StatelessWidget {
@@ -16,8 +16,8 @@ class MovieApp extends StatelessWidget {
       theme: ThemeData(brightness: Brightness.dark),
       initialRoute: "WelcomScreen",
       routes: {
-        "WelcomScreen": (context) => WelcomScreen(),
-        CustomBottomNav.id: (context) => CustomBottomNav(),
+        "WelcomScreen": (context) => const WelcomScreen(),
+        CustomBottomNav.id: (context) => const CustomBottomNav(),
       },
     );
   }

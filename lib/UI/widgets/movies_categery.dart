@@ -37,7 +37,7 @@ class _MoviesCategeryState extends State<MoviesCategery> {
           child: Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
-              Text(widget.title, style: TextStyle(fontSize: 30)),
+              Text(widget.title, style: const TextStyle(fontSize: 30)),
               TextButton(
                 onPressed: () {
                   Navigator.push(
@@ -60,7 +60,7 @@ class _MoviesCategeryState extends State<MoviesCategery> {
             ],
           ),
         ),
-        SizedBox(height: 20),
+        const SizedBox(height: 20),
         widget.movies.isEmpty
             ? Center(child: CircularProgressIndicator(color: kPcolor))
             : SizedBox(
