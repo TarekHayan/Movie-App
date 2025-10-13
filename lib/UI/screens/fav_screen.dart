@@ -35,7 +35,12 @@ class FavoritesScreen extends StatelessWidget {
               },
             );
           }
-          return Center(child: CircularProgressIndicator(color: kPcolor));
+          return const Center(
+            child: Text(
+              "No favorites yet",
+              style: TextStyle(color: Colors.white),
+            ),
+          );
         },
       ),
     );

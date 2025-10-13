@@ -1,3 +1,5 @@
+import 'package:flutter/widgets.dart';
+
 class MovieModel {
   final int id;
   final String langauge;
@@ -18,14 +20,26 @@ class MovieModel {
   });
 
   factory MovieModel.fromJson(Map<String, dynamic> json) {
+    final rawPoster = json['poster_path']?.toString().trim();
+
+    String imageUrl;
+    if (rawPoster == null || rawPoster.isEmpty) {
+      imageUrl =
+          'https://jaybel.officechoice.com.au/Images/ProductImages/product-image-1.png';
+    } else if (rawPoster.startsWith('http')) {
+      imageUrl = rawPoster;
+    } else {
+      imageUrl = 'https://image.tmdb.org/t/p/w500$rawPoster';
+    }
+
     return MovieModel(
-      id: json['id'],
-      langauge: json['original_language'],
-      decribtion: json['overview'],
-      image: 'https://image.tmdb.org/t/p/w500${json['poster_path']}',
-      date: json['release_date'],
-      title: json['title'],
-      rating: json['vote_average'],
+      id: json['id'] ?? 0,
+      langauge: json['original_language'] ?? '',
+      decribtion: json['overview'] ?? '',
+      image: imageUrl,
+      date: json['release_date'] ?? '',
+      title: json['title'] ?? '',
+      rating: (json['vote_average'] ?? 0).toDouble(),
     );
   }
 }

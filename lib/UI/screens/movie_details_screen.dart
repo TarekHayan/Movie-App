@@ -1,10 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:movie_app/UI/widgets/add_to_fav.dart';
 import 'package:movie_app/constants/colors.dart';
 import 'package:movie_app/data/models/movie_model.dart';
-import 'package:movie_app/logic/cubit/cubit/add_fav_cubit.dart';
 
 class MovieDetailsScreen extends StatelessWidget {
   const MovieDetailsScreen({super.key, required this.movie});
