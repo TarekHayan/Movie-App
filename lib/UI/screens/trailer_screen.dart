@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:movie_app/logic/cubit/cubit/trilar_movies_cubit.dart';
-import 'package:movie_app/data/repos/trilar_movies_repo.dart';
-import 'package:movie_app/data/web/trilar_movie_api.dart';
+import '../../logic/cubit/cubit/trilar_movies_cubit.dart';
+import '../../data/repos/trilar_movies_repo.dart';
+import '../../data/web/trilar_movie_api.dart';
 import 'package:youtube_player_iframe/youtube_player_iframe.dart';
 
 class TrailerScreen extends StatefulWidget {

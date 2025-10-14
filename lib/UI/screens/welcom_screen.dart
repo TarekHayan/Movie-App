@@ -1,7 +1,7 @@
 import 'dart:ui';
 import 'package:flutter/material.dart';
-import 'package:movie_app/UI/widgets/buttom_navigator_bar.dart';
-import 'package:movie_app/constants/colors.dart';
+import '../widgets/buttom_navigator_bar.dart';
+import '../../constants/colors.dart';
 
 class WelcomScreen extends StatelessWidget {
   const WelcomScreen({super.key});

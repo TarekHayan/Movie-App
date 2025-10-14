@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:movie_app/logic/cubit/cubit/add_fav_cubit.dart';
-import 'package:movie_app/data/models/movie_model.dart';
+import '../../logic/cubit/cubit/add_fav_cubit.dart';
+import '../../data/models/movie_model.dart';
 
 class AddToFav extends StatelessWidget {
   final MovieModel movie;

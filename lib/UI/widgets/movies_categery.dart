@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:movie_app/UI/widgets/grid_view_movies.dart';
-import 'package:movie_app/UI/widgets/list_view_movies.dart';
-import 'package:movie_app/constants/colors.dart';
-import 'package:movie_app/data/models/movie_model.dart';
+import 'grid_view_movies.dart';
+import 'list_view_movies.dart';
+import '../../constants/colors.dart';
+import '../../data/models/movie_model.dart';
 
 class MoviesCategery extends StatefulWidget {
   const MoviesCategery({

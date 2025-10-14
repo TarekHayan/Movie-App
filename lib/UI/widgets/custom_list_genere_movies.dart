@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:movie_app/UI/screens/show_genere_movie.dart';
-import 'package:movie_app/constants/colors.dart';
-import 'package:movie_app/data/models/genre_movies_model.dart';
-import 'package:movie_app/data/repos/categery_movie_repo.dart';
-import 'package:movie_app/data/web/categery_movie_api.dart';
-import 'package:movie_app/logic/cubit/cubit/get_categery_cubit.dart';
+import '../screens/show_genere_movie.dart';
+import '../../constants/colors.dart';
+import '../../data/models/genre_movies_model.dart';
+import '../../data/repos/categery_movie_repo.dart';
+import '../../data/web/categery_movie_api.dart';
+import '../../logic/cubit/cubit/get_categery_cubit.dart';
 
 class CustomListGenereMovies extends StatelessWidget {
   const CustomListGenereMovies({super.key, required this.geners});

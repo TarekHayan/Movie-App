@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:movie_app/UI/screens/trailer_screen.dart';
-import 'package:movie_app/UI/widgets/add_to_fav.dart';
-import 'package:movie_app/constants/colors.dart';
-import 'package:movie_app/data/models/movie_model.dart';
-import 'package:movie_app/data/repos/trilar_movies_repo.dart';
-import 'package:movie_app/data/web/trilar_movie_api.dart';
-import 'package:movie_app/logic/cubit/cubit/trilar_movies_cubit.dart';
+import 'trailer_screen.dart';
+import '../widgets/add_to_fav.dart';
+import '../../constants/colors.dart';
+import '../../data/models/movie_model.dart';
+import '../../data/repos/trilar_movies_repo.dart';
+import '../../data/web/trilar_movie_api.dart';
+import '../../logic/cubit/cubit/trilar_movies_cubit.dart';
 
 class MovieDetailsScreen extends StatelessWidget {
   const MovieDetailsScreen({super.key, required this.movie});

@@ -1,7 +1,7 @@
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
-import 'package:movie_app/UI/screens/movie_details_screen.dart';
-import 'package:movie_app/data/models/movie_model.dart';
+import '../screens/movie_details_screen.dart';
+import '../../data/models/movie_model.dart';
 
 class SlideShowMovies extends StatelessWidget {
   const SlideShowMovies({super.key, required this.movies});

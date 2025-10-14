@@ -1,11 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:movie_app/UI/screens/view_search_screen.dart';
-import 'package:movie_app/UI/widgets/custom_text_field.dart';
-import 'package:movie_app/data/repos/search_movie_repo.dart';
-import 'package:movie_app/data/web/search_movie_api.dart';
-import 'package:movie_app/logic/cubit/cubit/search_movies_cubit.dart';
-import 'package:movie_app/constants/colors.dart';
+import 'view_search_screen.dart';
+import '../widgets/custom_text_field.dart';
+import '../../data/repos/search_movie_repo.dart';
+import '../../data/web/search_movie_api.dart';
+import '../../logic/cubit/cubit/search_movies_cubit.dart';
 
 class SearchScreen extends StatelessWidget {
   const SearchScreen({super.key});

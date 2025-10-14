@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:movie_app/UI/screens/movie_details_screen.dart';
-import 'package:movie_app/constants/colors.dart';
-import 'package:movie_app/data/models/movie_model.dart';
-import 'package:movie_app/logic/cubit/cubit/add_fav_cubit.dart';
+import '../screens/movie_details_screen.dart';
+import '../../constants/colors.dart';
+import '../../data/models/movie_model.dart';
+import '../../logic/cubit/cubit/add_fav_cubit.dart';
 
 class ListViewFavMovie extends StatelessWidget {
   const ListViewFavMovie({super.key, required this.movie});

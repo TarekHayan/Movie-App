@@ -1,7 +1,7 @@
 import 'package:bloc/bloc.dart';
 import 'package:meta/meta.dart';
-import 'package:movie_app/data/models/trilar_movie_model.dart';
-import 'package:movie_app/data/repos/trilar_movies_repo.dart';
+import '../../../data/models/trilar_movie_model.dart';
+import '../../../data/repos/trilar_movies_repo.dart';
 
 part 'trilar_movies_state.dart';
 

@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:movie_app/UI/screens/movie_details_screen.dart';
-import 'package:movie_app/constants/colors.dart';
-import 'package:movie_app/logic/cubit/cubit/search_movies_cubit.dart';
+import 'movie_details_screen.dart';
+import '../../constants/colors.dart';
+import '../../logic/cubit/cubit/search_movies_cubit.dart';
 
 class SearchResultsScreen extends StatefulWidget {
   final String query;

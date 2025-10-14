@@ -1,7 +1,7 @@
 import 'package:bloc/bloc.dart';
 import 'package:meta/meta.dart';
-import 'package:movie_app/data/models/movie_model.dart';
-import 'package:movie_app/data/repos/categery_movie_repo.dart';
+import '../../../data/models/movie_model.dart';
+import '../../../data/repos/categery_movie_repo.dart';
 
 part 'get_categery_state.dart';
 

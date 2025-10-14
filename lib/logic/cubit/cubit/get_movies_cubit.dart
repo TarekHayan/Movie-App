@@ -1,8 +1,8 @@
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:movie_app/data/models/genre_movies_model.dart';
-import 'package:movie_app/data/models/movie_model.dart';
-import 'package:movie_app/data/repos/genre_movies_repo.dart';
-import 'package:movie_app/data/repos/movie_repo.dart';
+import '../../../data/models/genre_movies_model.dart';
+import '../../../data/models/movie_model.dart';
+import '../../../data/repos/genre_movies_repo.dart';
+import '../../../data/repos/movie_repo.dart';
 
 part 'get_movies_state.dart';
 

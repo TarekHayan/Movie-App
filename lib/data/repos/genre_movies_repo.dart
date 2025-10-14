@@ -1,5 +1,5 @@
-import 'package:movie_app/data/models/genre_movies_model.dart';
-import 'package:movie_app/data/web/genre_movies_api.dart';
+import '../models/genre_movies_model.dart';
+import '../web/genre_movies_api.dart';
 
 class GenreMoviesRepo {
   final GenreMoviesApi genreMoviesApi;

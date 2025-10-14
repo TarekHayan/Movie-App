@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:movie_app/UI/widgets/grid_view_movies.dart';
-import 'package:movie_app/constants/colors.dart';
-import 'package:movie_app/logic/cubit/cubit/get_categery_cubit.dart';
+import '../widgets/grid_view_movies.dart';
+import '../../constants/colors.dart';
+import '../../logic/cubit/cubit/get_categery_cubit.dart';
 
 class ShowGenereMovie extends StatelessWidget {
   const ShowGenereMovie({

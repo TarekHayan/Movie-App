@@ -1,5 +1,5 @@
-import 'package:movie_app/data/models/trilar_movie_model.dart';
-import 'package:movie_app/data/web/trilar_movie_api.dart';
+import '../models/trilar_movie_model.dart';
+import '../web/trilar_movie_api.dart';
 
 class TrilarMoviesRepo {
   final TrilarMovieApi trilarMovieApi;

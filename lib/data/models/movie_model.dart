@@ -1,5 +1,3 @@
-import 'package:flutter/widgets.dart';
-
 class MovieModel {
   final int id;
   final String langauge;

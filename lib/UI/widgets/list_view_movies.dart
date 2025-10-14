@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:movie_app/UI/screens/movie_details_screen.dart';
-import 'package:movie_app/data/models/movie_model.dart';
+import '../screens/movie_details_screen.dart';
+import '../../data/models/movie_model.dart';
 
 class ListViewMovies extends StatelessWidget {
   const ListViewMovies({super.key, required this.movie});

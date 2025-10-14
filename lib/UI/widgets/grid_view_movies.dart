@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:movie_app/UI/widgets/list_view_movies.dart';
-import 'package:movie_app/data/models/movie_model.dart';
+import 'list_view_movies.dart';
+import '../../data/models/movie_model.dart';
 
 class GridViewMovies extends StatelessWidget {
   const GridViewMovies({

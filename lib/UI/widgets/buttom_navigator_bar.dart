@@ -1,10 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:movie_app/UI/screens/fav_screen.dart';
-import 'package:movie_app/UI/screens/home_page.dart';
-import 'package:movie_app/UI/screens/search_screen.dart';
-import 'package:movie_app/constants/colors.dart';
-import 'package:movie_app/logic/cubit/cubit/add_fav_cubit.dart';
+import '../screens/fav_screen.dart';
+import '../screens/home_page.dart';
+import '../screens/search_screen.dart';
+import '../../constants/colors.dart';
 
 class CustomBottomNav extends StatefulWidget {
   const CustomBottomNav({super.key});

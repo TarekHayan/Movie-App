@@ -1,5 +1,5 @@
-import 'package:movie_app/data/models/movie_model.dart';
-import 'package:movie_app/data/web/movie_api.dart';
+import '../models/movie_model.dart';
+import '../web/movie_api.dart';
 
 class MovieRepo {
   final MovieApi movieApi;

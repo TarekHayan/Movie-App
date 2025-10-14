@@ -1,5 +1,5 @@
 import 'package:dio/dio.dart';
-import 'package:movie_app/constants/texts.dart';
+import '../../constants/texts.dart';
 
 class MovieApi {
   final dio = Dio();

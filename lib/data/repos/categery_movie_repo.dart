@@ -1,5 +1,5 @@
-import 'package:movie_app/data/models/movie_model.dart';
-import 'package:movie_app/data/web/categery_movie_api.dart';
+import '../models/movie_model.dart';
+import '../web/categery_movie_api.dart';
 
 class CategeryMovieRepo {
   final CategeryMovieApi movieCategeryApi;
