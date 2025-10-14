@@ -8,7 +8,6 @@ class CategeryMovieRepo {
 
   Future<List<MovieModel>> getMoview({required int id}) async {
     final movies = await movieCategeryApi.getMoviesCategory(genreId: id);
-    print(movies);
     return movies.map((movie) => MovieModel.fromJson(movie)).toList();
   }
 }

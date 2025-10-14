@@ -36,6 +36,8 @@ dependencies:
     sdk: flutter
   flutter_bloc: ^9.1.1
   font_awesome_flutter: ^10.10.0
+  youtube: ^2.0.0
+  youtube_player_iframe: ^5.2.2
 
 dev_dependencies:
   flutter_lints: ^5.0.0

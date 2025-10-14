@@ -8,7 +8,6 @@ class SearchMovieRepo {
 
   Future<List<MovieModel>> getMovies({required String name}) async {
     final movies = await searchMovieApi.getSearchMovies(name: name);
-    print(movies);
     return movies.map((movie) => MovieModel.fromJson(movie)).toList();
   }
 }

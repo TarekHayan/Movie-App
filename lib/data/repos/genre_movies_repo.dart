@@ -8,7 +8,6 @@ class GenreMoviesRepo {
 
   Future<List<GenreMoviesModel>> getGeners() async {
     final geners = await genreMoviesApi.getGenre();
-    print(geners);
     return geners.map((gener) => GenreMoviesModel.fromjson(gener)).toList();
   }
 }
