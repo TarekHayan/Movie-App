@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:movie_app/UI/screens/profile_screen.dart';
 import '../screens/fav_screen.dart';
 import '../screens/home_page.dart';
 import '../screens/search_screen.dart';
@@ -18,12 +19,7 @@ class _CustomBottomNavState extends State<CustomBottomNav> {
     const HomePage(),
     const SearchScreen(),
     const FavoritesScreen(),
-    const Center(
-      child: Text(
-        "Profile Page",
-        style: TextStyle(color: Colors.white, fontSize: 25),
-      ),
-    ),
+    const ProfileScreen(),
   ];
 
   @override

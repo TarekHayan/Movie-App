@@ -1,6 +1,7 @@
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:movie_app/UI/screens/auth.dart';
 import 'package:movie_app/UI/screens/sign-In_screen.dart';
 import 'package:movie_app/UI/screens/sign-Up_screen.dart';
 import 'package:movie_app/firebase_options.dart';
@@ -24,8 +25,9 @@ class MovieApp extends StatelessWidget {
       child: MaterialApp(
         debugShowCheckedModeBanner: false,
         theme: ThemeData(brightness: Brightness.dark),
-        initialRoute: SignInScreen.id,
+        initialRoute: Auth.id,
         routes: {
+          Auth.id: (context) => const Auth(),
           SignInScreen.id: (context) => const SignInScreen(),
           WelcomScreen.id: (context) => const WelcomScreen(),
           CustomBottomNav.id: (context) => const CustomBottomNav(),
