@@ -1,9 +1,6 @@
 import 'dart:ui';
 import 'package:flutter/material.dart';
-import 'package:movie_app/UI/screens/auth.dart';
-import 'package:movie_app/UI/screens/home_page.dart';
 import 'package:movie_app/UI/screens/sign-In_screen.dart';
-import '../widgets/buttom_navigator_bar.dart';
 import '../../constants/colors.dart';
 
 class WelcomScreen extends StatelessWidget {

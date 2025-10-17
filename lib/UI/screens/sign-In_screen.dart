@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:movie_app/UI/screens/auth.dart';
 import 'package:movie_app/UI/screens/sign-Up_screen.dart';
 import 'package:movie_app/constants/colors.dart';
+import 'package:movie_app/helper/show_snak_bar.dart';
 
 class SignInScreen extends StatefulWidget {
   const SignInScreen({super.key});
@@ -16,18 +17,34 @@ class _SignInScreenState extends State<SignInScreen> {
   final _emailControlier = TextEditingController();
   final _passwordController = TextEditingController();
   Future sigin() async {
-    await FirebaseAuth.instance
-        .signInWithEmailAndPassword(
-          email: _emailControlier.text.trim(),
-          password: _passwordController.text.trim(),
-        )
-        .then((value) {
-          Navigator.pushAndRemoveUntil(
-            context,
-            MaterialPageRoute(builder: (_) => const Auth()),
-            (route) => false,
-          );
-        });
+    try {
+      await FirebaseAuth.instance.signInWithEmailAndPassword(
+        email: _emailControlier.text.trim(),
+        password: _passwordController.text.trim(),
+      );
+
+      showSnackBar(context, msg: 'SigIn successful!');
+      Navigator.pushAndRemoveUntil(
+        context,
+        MaterialPageRoute(builder: (_) => const Auth()),
+        (route) => false,
+      );
+    } on FirebaseAuthException catch (e) {
+      String errorMessage = '';
+
+      switch (e.code) {
+        case 'invalid-email':
+          errorMessage = 'The email address is badly formatted.';
+          break;
+        case 'user-disabled':
+          errorMessage = 'This user account has been disabled.';
+          break;
+        default:
+          errorMessage = 'email or password is not correct';
+      }
+
+      showSnackBar(context, msg: errorMessage);
+    }
   }
 
   @override
