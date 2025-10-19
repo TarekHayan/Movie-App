@@ -45,7 +45,7 @@ class ProfileScreen extends StatelessWidget {
 
             // اسم المستخدم
             Text(
-              user?.displayName ?? "No Username",
+              user?.email!.split('@').first.toUpperCase() ?? "No Username",
               style: const TextStyle(
                 fontSize: 22,
                 color: Colors.white,
