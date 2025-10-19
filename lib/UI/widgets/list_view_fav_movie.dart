@@ -1,3 +1,5 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import '../screens/movie_details_screen.dart';
@@ -6,7 +8,9 @@ import '../../data/models/movie_model.dart';
 import '../../logic/cubit/cubit/add_fav_cubit.dart';
 
 class ListViewFavMovie extends StatelessWidget {
-  const ListViewFavMovie({super.key, required this.movie});
+  ListViewFavMovie({super.key, required this.movie});
+
+  final String user = FirebaseAuth.instance.currentUser!.uid;
 
   final MovieModel movie;
 
@@ -96,7 +100,12 @@ class ListViewFavMovie extends StatelessWidget {
                 size: 30,
               ),
               onPressed: () {
-                context.read<AddFavCubit>().toggleFavorite(movie);
+                FirebaseFirestore.instance
+                    .collection("users")
+                    .doc(user)
+                    .collection("favorites")
+                    .doc(movie.id.toString())
+                    .delete();
               },
             ),
           ],
