@@ -1,5 +1,6 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+import 'package:movie_app/UI/screens/app_info_screen.dart';
 import 'package:movie_app/UI/screens/auth.dart';
 import 'package:movie_app/constants/colors.dart';
 
@@ -87,6 +88,27 @@ class ProfileScreen extends StatelessWidget {
                 },
                 child: const Text(
                   "Logout",
+                  style: TextStyle(fontSize: 20, color: Colors.white),
+                ),
+              ),
+            ),
+            const SizedBox(height: 30),
+
+            SizedBox(
+              width: double.infinity,
+              child: ElevatedButton(
+                style: ElevatedButton.styleFrom(
+                  backgroundColor: kPcolor,
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(18),
+                  ),
+                  padding: const EdgeInsets.symmetric(vertical: 14),
+                ),
+                onPressed: () {
+                  Navigator.pushNamed(context, AppInfoScreen.id);
+                },
+                child: const Text(
+                  "App Info",
                   style: TextStyle(fontSize: 20, color: Colors.white),
                 ),
               ),
