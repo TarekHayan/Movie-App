@@ -6,6 +6,7 @@ import '../../data/models/genre_movies_model.dart';
 import '../../data/repos/categery_movie_repo.dart';
 import '../../data/web/categery_movie_api.dart';
 import '../../logic/cubit/cubit/get_categery_cubit.dart';
+import '../../helper/responsive_helper.dart';
 
 class CustomListGenereMovies extends StatelessWidget {
   const CustomListGenereMovies({super.key, required this.geners});
@@ -13,10 +14,37 @@ class CustomListGenereMovies extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final height = ResponsiveHelper.getResponsiveSpacing(
+      context,
+      mobile: 40,
+      tablet: 48,
+      desktop: 56,
+    );
+    final horizontalPadding = ResponsiveHelper.getResponsiveHorizontalPadding(context);
+    final margin = ResponsiveHelper.getResponsiveSpacing(
+      context,
+      mobile: 6,
+      tablet: 8,
+      desktop: 10,
+    );
+    final padding = ResponsiveHelper.getResponsiveSpacing(
+      context,
+      mobile: 10,
+      tablet: 12,
+      desktop: 16,
+    );
+    final fontSize = ResponsiveHelper.getResponsiveFontSize(
+      context,
+      mobile: 14,
+      tablet: 16,
+      desktop: 18,
+    );
+
     return SizedBox(
-      height: 40,
+      height: height,
       child: ListView.builder(
         scrollDirection: Axis.horizontal,
+        padding: EdgeInsets.symmetric(horizontal: horizontalPadding),
         itemCount: geners.length,
         itemBuilder: (context, index) {
           final genre = geners[index];
@@ -49,8 +77,11 @@ class CustomListGenereMovies extends StatelessWidget {
               );
             },
             child: Container(
-              margin: const EdgeInsets.symmetric(horizontal: 6),
-              padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 10),
+              margin: EdgeInsets.symmetric(horizontal: margin),
+              padding: EdgeInsets.symmetric(
+                horizontal: padding * 1.6,
+                vertical: padding,
+              ),
               decoration: BoxDecoration(
                 gradient: LinearGradient(
                   colors: [kPcolor, const Color(0xFF1E1E1E)],
@@ -69,9 +100,9 @@ class CustomListGenereMovies extends StatelessWidget {
               child: Center(
                 child: Text(
                   genre.name,
-                  style: const TextStyle(
+                  style: TextStyle(
                     color: Colors.white,
-                    fontSize: 16,
+                    fontSize: fontSize,
                     fontWeight: FontWeight.w600,
                     letterSpacing: 0.5,
                   ),

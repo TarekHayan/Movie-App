@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import '../../constants/colors.dart';
+import '../../helper/responsive_helper.dart';
 
 class CustomTextField extends StatelessWidget {
   const CustomTextField({
@@ -15,27 +16,52 @@ class CustomTextField extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final padding = ResponsiveHelper.getResponsiveSpacing(
+      context,
+      mobile: 16,
+      tablet: 18,
+      desktop: 20,
+    );
+    final fontSize = ResponsiveHelper.getResponsiveFontSize(
+      context,
+      mobile: 14,
+      tablet: 16,
+      desktop: 18,
+    );
+    final labelFontSize = ResponsiveHelper.getResponsiveFontSize(
+      context,
+      mobile: 12,
+      tablet: 14,
+      desktop: 16,
+    );
+    final iconSize = ResponsiveHelper.getResponsiveFontSize(
+      context,
+      mobile: 20,
+      tablet: 24,
+      desktop: 28,
+    );
+
     return TextField(
       controller: controller,
       onSubmitted: onSubmitted,
-      style: const TextStyle(color: Colors.white),
+      style: TextStyle(color: Colors.white, fontSize: fontSize),
       cursorColor: kPcolor,
-      textInputAction: TextInputAction.search, // 🔍 يخلي زر الكيبورد "Search"
+      textInputAction: TextInputAction.search,
       decoration: InputDecoration(
         filled: true,
-        fillColor: const Color(0xFF1C1C1C), // 🎨 خلفية غامقة خفيفة
-        contentPadding: const EdgeInsets.symmetric(
-          horizontal: 16,
-          vertical: 18,
+        fillColor: const Color(0xFF1C1C1C),
+        contentPadding: EdgeInsets.symmetric(
+          horizontal: padding,
+          vertical: padding * 1.125,
         ),
         suffixIcon: Padding(
-          padding: const EdgeInsets.only(right: 10),
-          child: Icon(Icons.search, color: kPcolor),
+          padding: EdgeInsets.only(right: padding * 0.625),
+          child: Icon(Icons.search, color: kPcolor, size: iconSize),
         ),
         labelText: 'Search for what?',
-        labelStyle: const TextStyle(color: Colors.white70, fontSize: 14),
+        labelStyle: TextStyle(color: Colors.white70, fontSize: labelFontSize),
         hintText: hintText,
-        hintStyle: const TextStyle(color: Colors.white38),
+        hintStyle: TextStyle(color: Colors.white38, fontSize: fontSize),
         enabledBorder: OutlineInputBorder(
           borderRadius: BorderRadius.circular(14),
           borderSide: const BorderSide(color: Colors.white24),

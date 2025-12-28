@@ -3,6 +3,8 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:movie_app/data/models/movie_model.dart';
 import '../widgets/list_view_fav_movie.dart';
+import '../../helper/responsive_helper.dart';
+import 'movie_details_screen.dart';
 
 class FavoritesScreen extends StatelessWidget {
   const FavoritesScreen({super.key});
@@ -66,17 +68,70 @@ class FavoritesScreen extends StatelessWidget {
           }
 
           // عرض القائمة
-          return ListView.builder(
-            itemCount: favDocs.length,
-            itemBuilder: (context, index) {
-              final data = favDocs[index].data() as Map<String, dynamic>;
-              return ListViewFavMovie(
-                movie: MovieModel.fromJson(
-                  data,
-                ), // لو widget بتستقبل MovieModel، نعمل تحويل بسيط
-              );
-            },
-          );
+          final isDesktop = ResponsiveHelper.isDesktop(context);
+          final padding = ResponsiveHelper.getResponsivePadding(context);
+          final maxWidth = ResponsiveHelper.getMaxContentWidth(context);
+
+          if (isDesktop) {
+            // Desktop: Use GridView
+            final crossAxisCount = ResponsiveHelper.getGridCrossAxisCount(context);
+            final spacing = ResponsiveHelper.getGridSpacing(context);
+
+            return Center(
+              child: ConstrainedBox(
+                constraints: BoxConstraints(maxWidth: maxWidth),
+                child: GridView.builder(
+                  padding: padding,
+                  gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                    crossAxisCount: crossAxisCount,
+                    mainAxisSpacing: spacing,
+                    crossAxisSpacing: spacing,
+                    childAspectRatio: ResponsiveHelper.getGridChildAspectRatio(context),
+                  ),
+                  itemCount: favDocs.length,
+                  itemBuilder: (context, index) {
+                    final data = favDocs[index].data() as Map<String, dynamic>;
+                    final movie = MovieModel.fromJson(data);
+                    return GestureDetector(
+                      onTap: () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) => MovieDetailsScreen(movie: movie),
+                          ),
+                        );
+                      },
+                      child: ClipRRect(
+                        borderRadius: BorderRadius.circular(12),
+                        child: Image.network(
+                          movie.image,
+                          fit: BoxFit.cover,
+                          errorBuilder: (context, error, stackTrace) {
+                            return Container(
+                              color: Colors.grey[800],
+                              child: const Icon(Icons.error, color: Colors.white),
+                            );
+                          },
+                        ),
+                      ),
+                    );
+                  },
+                ),
+              ),
+            );
+          } else {
+            // Mobile/Tablet: Use ListView
+            return ListView.builder(
+              padding: padding,
+              itemCount: favDocs.length,
+              itemBuilder: (context, index) {
+                final data = favDocs[index].data() as Map<String, dynamic>;
+                return ListViewFavMovie(
+                  movie: MovieModel.fromJson(data),
+                );
+              },
+            );
+          }
         },
       ),
     );

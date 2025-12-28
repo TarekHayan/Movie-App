@@ -5,6 +5,7 @@ import '../widgets/custom_text_field.dart';
 import '../../data/repos/search_movie_repo.dart';
 import '../../data/web/search_movie_api.dart';
 import '../../logic/cubit/cubit/search_movies_cubit.dart';
+import '../../helper/responsive_helper.dart';
 
 class SearchScreen extends StatelessWidget {
   const SearchScreen({super.key});
@@ -24,42 +25,73 @@ class SearchScreen extends StatelessWidget {
         iconTheme: const IconThemeData(color: Colors.white),
         elevation: 0,
       ),
-      body: Padding(
-        padding: const EdgeInsets.symmetric(horizontal: 24, vertical: 60),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.stretch,
-          children: [
-            CustomTextField(
-              controller: controller,
-              hintText: "Search for a movie...",
-              onSubmitted: (value) {
-                if (value.trim().isEmpty) return;
+      body: LayoutBuilder(
+        builder: (context, constraints) {
+          final padding = ResponsiveHelper.getResponsivePadding(context);
+          final maxWidth = ResponsiveHelper.getMaxContentWidth(context);
+          final iconSize = ResponsiveHelper.getResponsiveFontSize(
+            context,
+            mobile: 80,
+            tablet: 100,
+            desktop: 120,
+          );
+          final textFontSize = ResponsiveHelper.getResponsiveFontSize(
+            context,
+            mobile: 14,
+            tablet: 16,
+            desktop: 18,
+          );
+          final spacing = ResponsiveHelper.getResponsiveSpacing(
+            context,
+            mobile: 40,
+            tablet: 50,
+            desktop: 60,
+          );
 
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(
-                    builder: (context) {
-                      return BlocProvider(
-                        create: (context) => SearchMoviesCubit(
-                          SearchMovieRepo(SearchMovieApi()),
-                        ),
-                        child: SearchResultsScreen(query: value.trim()),
-                      );
-                    },
-                  ),
-                );
-              },
+          return Center(
+            child: ConstrainedBox(
+              constraints: BoxConstraints(maxWidth: maxWidth),
+              child: Padding(
+                padding: padding,
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  crossAxisAlignment: CrossAxisAlignment.stretch,
+                  children: [
+                    CustomTextField(
+                      controller: controller,
+                      hintText: "Search for a movie...",
+                      onSubmitted: (value) {
+                        if (value.trim().isEmpty) return;
+
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) {
+                              return BlocProvider(
+                                create: (context) => SearchMoviesCubit(
+                                  SearchMovieRepo(SearchMovieApi()),
+                                ),
+                                child: SearchResultsScreen(query: value.trim()),
+                              );
+                            },
+                          ),
+                        );
+                      },
+                    ),
+                    SizedBox(height: spacing),
+                    Icon(Icons.search, color: Colors.white54, size: iconSize),
+                    SizedBox(height: spacing / 2),
+                    Text(
+                      "Type something to search movies",
+                      textAlign: TextAlign.center,
+                      style: TextStyle(color: Colors.white54, fontSize: textFontSize),
+                    ),
+                  ],
+                ),
+              ),
             ),
-            const SizedBox(height: 50),
-            const Icon(Icons.search, color: Colors.white54, size: 100),
-            const SizedBox(height: 20),
-            const Text(
-              "Type something to search movies",
-              textAlign: TextAlign.center,
-              style: TextStyle(color: Colors.white54, fontSize: 16),
-            ),
-          ],
-        ),
+          );
+        },
       ),
     );
   }
