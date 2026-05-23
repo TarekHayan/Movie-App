@@ -90,7 +90,9 @@ class _HomePageContent extends StatelessWidget {
                           SizedBox(height: topSpacing),
                           SizedBox(
                             height: carouselHeight,
-                            child: SlideShowMovies(movies: state.nowPlayingMovies),
+                            child: SlideShowMovies(
+                              movies: state.nowPlayingMovies,
+                            ),
                           ),
                           SizedBox(height: sectionSpacing),
                           CustomListGenereMovies(geners: state.genres),
